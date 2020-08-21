@@ -1,0 +1,5 @@
+---
+# defaults file for sysctl
+sysctl_reload: true
+sysctl_set: true
+sysctl_file: /etc/sysctl.d/00-ansible.conf

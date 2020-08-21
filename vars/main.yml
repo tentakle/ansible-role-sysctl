@@ -1,0 +1,108 @@
+---
+# vars file for sysctl
+sysctl_items:
+  - name: net.ipv4.ip_forward
+    value: 0
+    comment: controls IP packet forwarding
+  - name: net.ipv4.conf.default.accept_source_route
+    value: 0
+    comment: do not accept source routing
+  - name: kernel.sysrq
+    value: 0
+    comment: controls the System Request debugging functionality of the kernel
+  - name: kernel.core_uses_pid
+    value: 1
+    comment: controls whether core dumps will append the PID to the core filename, useful for debugging multi-threaded applications
+  - name: net.ipv4.tcp_syncookies
+    value: 1
+    comment: controls the use of TCP syncookies
+  - name: net.ipv4.tcp_synack_retries
+    value: 5
+    comment: turn on SYN-flood protections
+  - name: net.ipv4.conf.all.send_redirects
+    value: 0
+    comment: send redirects, if router, but this is just server
+  - name: net.ipv4.conf.default.send_redirects
+    value: 0
+    comment: so no routing allowed
+  - name: net.ipv4.conf.all.accept_source_route
+    value: 0
+    comment: accept packets with SRR option? no
+  - name: net.ipv4.conf.all.accept_redirects
+    value: 0
+    comment: accept Redirects? no, this is not router
+  - name: net.ipv4.conf.all.secure_redirects
+    value: 0
+    comment: accept Redirects? no, this is not router
+  - name: net.ipv4.conf.all.log_martians
+    value: 1
+    comment: log packets with impossible addresses to kernel log? yes
+  - name: net.ipv4.conf.default.accept_source_route
+    value: 0
+    comment: log packets with impossible addresses to kernel log? yes
+  - name: net.ipv4.conf.default.accept_redirects
+    value: 0
+    comment: log packets with impossible addresses to kernel log? yes
+  - name: net.ipv4.conf.default.secure_redirects
+    value: 0
+    comment: log packets with impossible addresses to kernel log? yes
+  - name: net.ipv4.icmp_echo_ignore_broadcasts
+    value: 1
+    comment: ignore all ICMP ECHO and TIMESTAMP requests sent to it via broadcast/multicast
+  - name: net.ipv4.tcp_syncookies
+    value: 1
+    comment: prevent against the common 'syn flood attack'
+  - name: net.ipv4.conf.all.rp_filter
+    value: 1
+    comment: enable source validation by reversed path, as specified in RFC1812
+  - name: net.ipv4.conf.default.rp_filter
+    value: 1
+    comment: controls source route verification
+  - name: net.ipv6.conf.default.router_solicitations
+    value: 0
+    comment: number of Router Solicitations to send until assuming no routers are present, this is host and not router
+  - name: net.ipv6.conf.default.accept_ra_rtr_pref
+    value: 0
+    comment: accept Router Preference in RA?
+  - name: net.ipv6.conf.default.accept_ra_pinfo
+    value: 0
+    comment: learn Prefix Information in Router Advertisement
+  - name: net.ipv6.conf.default.accept_ra_defrtr
+    value: 0
+    comment: setting controls whether the system will accept Hop Limit settings from a router advertisement
+  - name: net.ipv6.conf.default.autoconf
+    value: 0
+    comment: router advertisements can cause the system to assign a global unicast address to an interface
+  - name: net.ipv6.conf.default.dad_transmits
+    value: 0
+    comment: how many neighbor solicitations to send out per address?
+  - name: net.ipv6.conf.default.max_addresses
+    value: 1
+    comment: how many global unicast IPv6 addresses can be assigned to each interface?
+  - name: fs.file-max
+    value: 65535
+    comment: increase system file descriptor limit
+  - name: kernel.pid_max
+    value: 65536
+    comment: allow for more PIDs
+  - name: net.ipv4.ip_local_port_range
+    value: 2000 65000
+    comment: increase system IP port limits
+  - name: net.ipv4.tcp_rfc1337
+    value: 1
+    comment: RFC 1337 fix
+  - name: kernel.panic
+    value: 10
+    comment: reboot the machine soon after a kernel panic
+  - name: kernel.randomize_va_space
+    value: 2
+    comment: addresses of mmap base, heap, stack and VDSO page are randomized
+  - name: net.ipv4.icmp_ignore_bogus_error_responses
+    value: 1
+    comment: ignore bad ICMP errors
+  - name: fs.protected_hardlinks
+    value: 1
+    comment: protects against creating or following links under certain conditions
+  - name: fs.protected_symlinks
+    value: 1
+    comment: protects against creating or following links under certain conditions

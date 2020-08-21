@@ -1,0 +1,11 @@
+---
+# tasks file for sysctl
+- name: set sysctl setting
+  sysctl:
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+    sysctl_file: "{{ sysctl_file }}"
+    sysctl_set: "{{ sysctl_set }}"
+    state: present
+    reload: "{{ sysctl_reload }}"
+  loop: "{{ sysctl_items }}"
